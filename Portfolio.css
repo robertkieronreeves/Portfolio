@@ -6,6 +6,7 @@ Body {
     font-family: 'Quicksand', sans-serif;
     font-size: 62.5%;
     background-color: #fff;
+    color: #5D6063;
 }
 
 .main-nav {
@@ -80,4 +81,25 @@ h2 {
 p {
     text-align: justify;
     font-size: 1rem;
+}
+
+.footer {
+    background-color: #ffffff;
+    color: #5D6063;
+    border-top: 2px solid #EAEDF0;
+    width: 100%;
+    font-size: 1rem;
+
+}
+
+.social-media-container {
+    float: right;
+}
+
+.footer-text {
+    float: left;
+    position: relative;
+    left: 5px;
+    top: 5px;
+    bottom: 5px;
 }
