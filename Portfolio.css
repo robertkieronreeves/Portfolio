@@ -1,3 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
 Body {
     font-family: 'Quicksand', sans-serif;
+    font-size: 62.5%;
+    background-color: #fff;
+}
+
+.main-nav {
+    
 }
