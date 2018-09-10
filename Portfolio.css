@@ -9,5 +9,22 @@ Body {
 }
 
 .main-nav {
-    
+    background-color: #ffffff;
+    color: #5D6063;
+    position: fixed;
+    box-shadow: 0 2px 0 rgba(93, 96, 99, .1);
+    width: 100%;
+    font-size: 2rem;
+}
+
+.nav-button-left {
+    float: left;
+    position: relative;
+    left: 15px;
+}
+
+.nav-button-right {
+    float: right;
+    position: relative;
+    right: 15px;
 }
