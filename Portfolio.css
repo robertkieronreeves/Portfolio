@@ -23,14 +23,16 @@ Body {
     float: left;
     position: relative;
     left: 5px;
-    bottom: 5px;
+    min-width: 180px;
+
 }
 
 .nav-button-right {
     float: right;
     position: relative;
     right: 25px;
-    bottom: 5px;
+    min-width: 180px;
+    text-align: right;
 }
 
 .nav-text {
