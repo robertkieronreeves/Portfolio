@@ -53,6 +53,10 @@ Body {
     padding-bottom: 80px;
 }
 
+.blog-wrapper {
+    border-top: 1px solid #EAEDF0;
+}
+
 h1 {
     text-align: center;
     font-size: 3rem;
@@ -64,7 +68,7 @@ h2 {
 }
 
 .blog-container {
-    border-top: 2px solid #EAEDF0;
+    width: 100%;
 }
 
 
@@ -76,6 +80,17 @@ h2 {
 .sub-heading2 {
     text-align: center;
     font-size: 1rem;
+    font-style: italic;
+}
+
+.sub-heading-rule-before {
+    position: relative;
+    border-top: 1px solid #959BA0;
+}
+
+.sub-heading-rule-after {
+    position: relative;
+    border-top: 1px solid #959BA0;
 }
 
 .main-content {
