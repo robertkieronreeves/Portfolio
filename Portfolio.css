@@ -120,10 +120,12 @@ p {
 }
 
 .footer-text {
-    float: left;
     position: relative;
     left: 5px;
-    padding-top: 15px;
+    padding: 15px;
+    display: inline-block;
+    width: 50%;
+    margin: auto;
 }
 
 a {
@@ -140,4 +142,9 @@ a {
     height: 120px;
     width: 120px;
     padding: 15px;
+}
+
+.contact-image {
+    position: relative;
+    top: 10px;
 }
