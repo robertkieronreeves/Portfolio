@@ -112,3 +112,8 @@ p {
 a {
     text-decoration: none;
 }
+
+.gears {
+    float: left;
+    padding: 15px;
+}
