@@ -12,11 +12,10 @@ Body {
 .main-nav {
     background-color: #ffffff;
     color: #5D6063;
-    position: fixed;
     box-shadow: 0 2px 0 rgba(93, 96, 99, .1);
     width: 100%;
     font-size: 1rem;
-    padding: 10px;
+    padding-bottom: 30px;
 }
 
 .nav-button-left {
@@ -24,7 +23,6 @@ Body {
     position: relative;
     left: 5px;
     min-width: 180px;
-
 }
 
 .nav-button-right {
@@ -40,7 +38,7 @@ Body {
 }
 
 .main-header-wrapper {
-    max-width: 580px;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
     padding-top: 80px;
@@ -48,7 +46,7 @@ Body {
 }
 
 .main-content-wrapper {
-    max-width: 580px;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
     padding-top: 80px;
@@ -57,6 +55,11 @@ Body {
 
 .blog-wrapper {
     border-top: 1px solid #EAEDF0;
+}
+
+.sf-card {
+    width: 10%;
+    height:10%;
 }
 
 h1 {
@@ -71,6 +74,10 @@ h2 {
 
 .blog-container {
     width: 100%;
+}
+
+.blog-article {
+    border-bottom: 1px solid #EAEDF0;
 }
 
 
@@ -111,21 +118,23 @@ p {
     border-top: 2px solid #EAEDF0;
     width: 100%;
     font-size: 1rem;
+}
 
+#C3{
+    padding: 8px;
 }
 
 .social-media-container {
     float: right;
-    padding: 10px;
+    margin-top: 6px;
 }
 
 .footer-text {
     position: relative;
     left: 5px;
-    padding: 15px;
     display: inline-block;
     width: 50%;
-    margin: auto;
+    margin-bottom: 6px;
 }
 
 a {
