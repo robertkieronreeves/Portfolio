@@ -10,7 +10,7 @@ Body {
 }
 
 .main-nav {
-    background-color: #ffffff;
+    background-color: #fff;
     color: #5D6063;
     box-shadow: 0 2px 0 rgba(93, 96, 99, .1);
     width: 100%;
@@ -120,7 +120,7 @@ p {
 }
 
 .footer {
-    background-color: #ffffff;
+    background-color: #fff;
     color: #5D6063;
     border-top: 2px solid #EAEDF0;
     width: 100%;
@@ -163,6 +163,8 @@ a {
 .contact-image {
     position: relative;
     top: 10px;
+    padding-left: 3px;
+    padding-right: 3px;
 }
 
 .text-bottom {
