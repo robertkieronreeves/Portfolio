@@ -2,20 +2,21 @@
     box-sizing: border-box;
 }
 
-Body {
+body {
     font-family: 'Quicksand', sans-serif;
     font-size: 62.5%;
-    background-color: #fff;
+    background-color: #ffffff;
     color: #5D6063;
 }
 
 .main-nav {
-    background-color: #fff;
+    background-color: #ffffff;
     color: #5D6063;
     box-shadow: 0 2px 0 rgba(93, 96, 99, .1);
     width: 100%;
     font-size: 1rem;
     padding-bottom: 30px;
+    padding-top: 10px;
 }
 
 .nav-button-left {
@@ -120,7 +121,7 @@ p {
 }
 
 .footer {
-    background-color: #fff;
+    background-color: #ffffff;
     color: #5D6063;
     border-top: 2px solid #EAEDF0;
     width: 100%;
@@ -128,7 +129,9 @@ p {
 }
 
 #C3{
-    padding: 8px;
+    padding-bottom: 8px;
+    padding-right: 8px;
+
 }
 
 .social-media-container {
@@ -171,3 +174,10 @@ a {
     position: relative;
     top: 30px;
 }
+
+.gearbox-image {
+    float: left;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    width: 200px;
+    height: 200px;
