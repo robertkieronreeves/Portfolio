@@ -50,11 +50,17 @@ Body {
     margin-left: auto;
     margin-right: auto;
     padding-top: 80px;
-    padding-bottom: 80px;
+    padding-bottom: 30px;
+    overflow: auto;
 }
 
 .blog-wrapper {
     border-top: 1px solid #EAEDF0;
+    margin-top: 30px;
+}
+
+.article-wrapper {
+    width: 100%
 }
 
 .sf-card {
@@ -76,10 +82,11 @@ h2 {
     width: 100%;
 }
 
-.blog-article {
-    border-bottom: 1px solid #EAEDF0;
+.article {
+    position: relative;
+    float: left;
+    width: 100%;
 }
-
 
 .sub-heading {
     text-align: center;
@@ -156,4 +163,9 @@ a {
 .contact-image {
     position: relative;
     top: 10px;
+}
+
+.text-bottom {
+    position: relative;
+    top: 30px;
 }
