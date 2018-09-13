@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 62.5%;
+    background-color: #ffffff;
+    color: #5D6063;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+h3 {
+    text-align: center;
+    font-size: 1rem;
+}
+
+.h2-sub-heading {
+    border-top: 1px solid #959BA0;
+    border-bottom: 1px solid #959BA0;
+    padding: 30px none 30px none;
+}
+
+p {
+    text-align: justify;
+    font-size: 1.2rem;
+    font-family: 'Fanwood Text', serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.main-nav {
+    background-color: #ffffff;
+    color: #5D6063;
+    box-shadow: 0 2px 0 rgba(93, 96, 99, .1);
+    width: 100%;
+    font-size: 1rem;
+    padding-bottom: 30px;
+    padding-top: 10px;
+}
+
+.nav-button-left {
+    float: left;
+    position: relative;
+    left: 5px;
+    min-width: 180px;
+}
+
+.nav-button-right {
+    float: right;
+    position: relative;
+    right: 25px;
+    min-width: 180px;
+    text-align: right;
+}
+
+.nav-text {
+    margin-left: 15px;
+}
+
+.main-header-wrapper {
+    max-width: 700px;
+    margin: 80px auto 80px auto;
+
+}
+
+.main-content-wrapper {
+    max-width: 700px;
+    margin: 80px auto 30px auto;
+    overflow: auto;
+}
+
+.blog-wrapper {
+    border-top: 1px solid #EAEDF0;
+    margin-top: 30px;
+}
+
+.article-wrapper {
+    width: 100%
+}
+
+.article {
+    float: left;
+    width: 100%;
+}
+
+.sub-heading {
+    text-align: center;
+    font-size: 1rem;
+    border-top: 1px solid #959BA0;
+    border-bottom: 1px solid #959BA0;
+    padding: 10px none 10px none;
+}
+
+
+.sub-heading2 {
+    text-align: center;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.main-content {
+    border-top: 1px solid #EAEDF0;
+    width: 100%;
+}
+
+.footer {
+    background-color: #ffffff;
+    color: #5D6063;
+    border-top: 2px solid #EAEDF0;
+    width: 100%;
+    font-size: 1rem;
+}
+
+#C3 {
+    padding-bottom: 8px;
+    padding-right: 8px;
+
+}
+
+.social-media-container {
+    float: right;
+    margin-top: 6px;
+}
+
+.footer-text {
+    position: relative;
+    left: 5px;
+    display: inline-block;
+    width: 50%;
+    margin-bottom: 6px;
+}
+
+.gears {
+    float: left;
+    padding-right: 15px;
+}
+
+.gearbox {
+    float: right;
+    height: 120px;
+    width: 120px;
+    padding-left: 15px;
+}
+
+.contact-image {
+    position: relative;
+    top: 10px;
+    padding-right: 3px;
+    padding-left: 5px;
+
+}
+
+.text-bottom {
+    position: relative;
+    top: 30px;
+}
+
+.gearbox-image {
+    float: left;
+    padding-right: 10px;
+    width: 200px;
+    height: 200px;
