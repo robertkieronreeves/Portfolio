@@ -118,7 +118,7 @@ h2 {
 p {
     text-align: justify;
     font-size: 1.2rem;
-    font-family: 'Suranna', serif;
+    font-family: 'Fanwood Text', serif;
 }
 
 .footer {
@@ -167,8 +167,9 @@ a {
 .contact-image {
     position: relative;
     top: 10px;
-    padding-left: 3px;
     padding-right: 3px;
+    padding-left: 5px;
+
 }
 
 .text-bottom {
