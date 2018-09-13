@@ -109,18 +109,14 @@ a {
     border-top: 1px solid #EAEDF0;
 }
 
-.footer {
+footer {
     background-color: #ffffff;
     color: #5D6063;
     border-top: 2px solid #EAEDF0;
     width: 100%;
     font-size: 1rem;
-}
-
-#C3 {
-    padding-bottom: 8px;
-    padding-right: 8px;
-
+    overflow: auto;
+    padding-bottom: 10px;
 }
 
 .social-media-container {
