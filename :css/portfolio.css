@@ -70,7 +70,7 @@ a {
 
 .main-header-wrapper {
     max-width: 700px;
-    margin: 80px auto 80px auto;
+    margin: 80px auto;
 
 }
 
@@ -83,10 +83,6 @@ a {
 .blog-wrapper {
     border-top: 1px solid #EAEDF0;
     margin-top: 30px;
-}
-
-.article-wrapper {
-    width: 100%
 }
 
 .article {
