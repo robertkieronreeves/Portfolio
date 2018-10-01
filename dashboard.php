@@ -2,9 +2,14 @@
 $db = new PDO('mysql:dbname=portfolio;host=127.0.0.1', 'root');
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-$stmt = $db->query("SELECT (`title` ,`intro_blurb`, `paragraph_1`, `image`, `paragraph_2`) FROM (`intro`, `about_me`)");
-$portfolioData = $stmt->fetchAll();
+$stmt = $db->query("SELECT `title` ,`intro_text` FROM `intro`");
+$title_array = $stmt->fetch();
+$stmt = $db->query("SELECT `paragraph_1`, `image`, `paragraph_2` FROM `about_me`");
+$about_me_array = $stmt->fetch();
+$stmt = $db->query("SELECT `title`, `image`, `paragraph` FROM `projects`");
+$projects_array = $stmt->fetch();
 
+array_merge($title_array, $about_me_array, $projects_array);
 ?>
 
 <!DOCTYPE html>
@@ -23,50 +28,50 @@ $portfolioData = $stmt->fetchAll();
         <form action="upload_intro.php" method="post" enctype="multipart/form-data">
             <h3>Intro:</h3>
                 Title text:
-                    <input name="title_text" input type="text" value="<?php echo $portfolioData[0]["title"] ?>"><br>
+                    <input name="title_text" input type="text" value="<?php echo $title_array["title"] ?>"><br>
                 Intro text:
-                    <textarea name="intro_text" input type="text" rows="10" cols="40"></textarea><br>
+                    <textarea name="intro_text" input type="text" rows="10" cols="40"><?php echo $title_array["intro_text"] ?></textarea><br>
                     <input type="submit" name="Submit All" value="submit all">
         </form>
         <form action="upload_about_me.php" method="post" enctype="multipart/form-data">
             <h3>About me:</h3>
                 Bio paragraph 1:
-                    <textarea name="intro_text" input type="text" rows="10" cols="40"></textarea><br>
+                    <textarea name="intro_text" input type="text" rows="10" cols="40"><?php echo $about_me_array["paragraph_1"] ?></textarea><br>
                 Image:
-                    <input type="file" name="fileToUpload" id="fileToUpload"><br>
+                    <input type="file" name="fileToUpload" id="fileToUpload" value="<?php echo $about_me_array["image"] ?>"><br>
                 Bio paragraph 2:
-                    <textarea name="intro_text" input type="text" rows="10" cols="40"></textarea><br>
+                    <textarea name="intro_text" input type="text" rows="10" cols="40"><?php echo $about_me_array["paragraph_2"] ?></textarea><br>
                     <input type="submit" name="Submit All" value="submit all">
         </form>
         <form action="upload_projects.php" method="post" enctype="multipart/form-data">
             <h3>Projects:</h3>
                 Project 1 Title:
-                    <input name="project_title" input type="text"><br>
+                    <input name="project_title" input type="text" value="<?php echo $projects_array["title"] ?>"><br>
                 Image:
-                    <input type="file" name="fileToUpload" id="fileToUpload"><br>
+                    <input type="file" name="fileToUpload" id="fileToUpload" value="<?php echo $projects_array["image"] ?>"><br>
                 Project 1 Paragraph:
-                    <textarea name="intro_text" input type="text" rows="10" cols="40"></textarea><br>
+                    <textarea name="intro_text" input type="text" rows="10" cols="40"><?php echo $projects_array["paragraph"] ?></textarea><br>
                     <input type="submit" name="Submit All" value="submit all"><br>
                 Project 2 Title:
-                    <input name="project_title" input type="text"><br>
+                    <input name="project_title" input type="text" value="<?php echo $projects_array["title"] ?>"><br>
                 Image:
-                    <input type="file" name="fileToUpload" id="fileToUpload"><br>
+                    <input type="file" name="fileToUpload" id="fileToUpload" value="<?php echo $projects_array["image"] ?>"><br>
                 Project 2 Paragraph:
-                    <textarea name="intro_text" input type="text" rows="10" cols="40"></textarea><br>
+                    <textarea name="intro_text" input type="text" rows="10" cols="40" value="<?php echo $projects_array["paragraph_2"] ?>"></textarea><br>
                     <input type="submit" name="Submit All" value="submit all"><br>
                 Project 3 Title:
-                    <input name="project_title" input type="text"><br>
+                    <input name="project_title" input type="text" value="<?php echo $projects_array["title"] ?>"><br>
                 Image:
-                    <input type="file" name="fileToUpload" id="fileToUpload"><br>
+                    <input type="file" name="fileToUpload" id="fileToUpload" value="<?php echo $projects_array["image"] ?>"><br>
                 Project 3 Paragraph:
-                    <textarea name="intro_text" input type="text" rows="10" cols="40"></textarea><br>
+                    <textarea name="intro_text" input type="text" rows="10" cols="40" value="<?php echo $projects_array["paragraph_2"] ?>"></textarea><br>
                     <input type="submit" name="Submit All" value="submit all"><br>
                 Project 4 Title:
-                    <input name="project_title" input type="text"><br>
+                    <input name="project_title" input type="text" value="<?php echo $projects_array["title"] ?>"><br>
                 Image:
-                    <input type="file" name="fileToUpload" id="fileToUpload"><br>
+                    <input type="file" name="fileToUpload" id="fileToUpload" value="<?php echo $projects_array["image"] ?>"><br>
                 Project 4 Paragraph:
-                    <textarea name="intro_text" input type="text" rows="10" cols="40"></textarea><br>
+                    <textarea name="intro_text" input type="text" rows="10" cols="40" value="<?php echo $projects_array["paragraph_2"] ?>"></textarea><br>
                     <input type="submit" name="Submit All" value="submit all"><br>
         </form>
 </body>
