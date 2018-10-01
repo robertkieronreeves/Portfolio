@@ -28,7 +28,7 @@ CREATE TABLE `about_me` (
   `image` text,
   `paragraph_2` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,6 +37,7 @@ CREATE TABLE `about_me` (
 
 LOCK TABLES `about_me` WRITE;
 /*!40000 ALTER TABLE `about_me` DISABLE KEYS */;
+INSERT INTO `about_me` VALUES (1,'I am a junior web developer with a passion for design and agile development. I am currently learning HTML, CSS, Javascript, PHP, and MySQL. I am also familiar with Git and other software environments. I am a certified scrum master and will be applying for my PHP Zend certification after I have graduated from Mayden Academy.','img/a-drop-of-water-osa-water-leaf-158725.jpeg','In addition to my web-development skills I have an honours degree in marketing and have over ten year\'s experience in hospitality and customer service. I also possess a level 5 leadership qualification from the Institute of Business Leadership. As far as hobbies and personal time go, I spent a lot of time working on my car, keeping fit, learning German and playing Rugby for the Bath Saracens. I am also currently working part-time at the King William pub in Bath.');
 /*!40000 ALTER TABLE `about_me` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -52,7 +53,7 @@ CREATE TABLE `intro` (
   `title` varchar(255) DEFAULT NULL,
   `intro_blurb` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -61,6 +62,7 @@ CREATE TABLE `intro` (
 
 LOCK TABLES `intro` WRITE;
 /*!40000 ALTER TABLE `intro` DISABLE KEYS */;
+INSERT INTO `intro` VALUES (1,'JUNIOR WEB DEVELOPER','There are lots of interesting things about me on this website. Please take your time and enjoy your stay. If you have any queries about anything then please don\'t hesitate to drop me a line.');
 /*!40000 ALTER TABLE `intro` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -98,4 +100,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-09-28 15:53:27
+-- Dump completed on 2018-10-01  9:59:40
