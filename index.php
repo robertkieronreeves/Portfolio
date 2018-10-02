@@ -12,6 +12,7 @@ $db = displayPDO();
     $projects_array = $stmt->fetch();
 
 $data = array_merge($title_array, $about_me_array, $projects_array);
+
 ?>
 
 <!DOCTYPE html>
