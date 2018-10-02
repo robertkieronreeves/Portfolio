@@ -1,21 +1,11 @@
 <?php
 
-//if (
-//
-//    ((empty($_POST["paragraph_1"]))) ||
-//    ((empty($_POST["paragraph_2"]))) ||
-//    ((empty($_POST["image"])))
-//
-//)    {
-//        echo ("Error, fields not filled completely");
-//    }
-
 require 'functions.php';
 
 $db = displayPDO();
 
 $stmt = $db->prepare (
-    "UPDATE  `about_me`
+                "UPDATE `about_me`
                  SET `paragraph_1` = :paragraph_1, `image` = :image, `paragraph_2` = :paragraph_2
                  WHERE id = 1;"
 );

@@ -5,7 +5,7 @@ require 'functions.php';
 $db = displayPDO();
 
 $stmt = $db->prepare (
-    "UPDATE  `projects`
+                "UPDATE `projects`
                  SET `title` = :title, `image` = :image, `paragraph` = :paragraph
                  WHERE id = 1;"
 );
