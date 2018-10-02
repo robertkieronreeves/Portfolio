@@ -9,7 +9,7 @@ $about_me_array = $stmt->fetch();
 $stmt = $db->query("SELECT `title`, `image`, `paragraph` FROM `projects`");
 $projects_array = $stmt->fetch();
 
-array_merge($title_array, $about_me_array, $projects_array);
+$data = array_merge($title_array, $about_me_array, $projects_array);
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +38,7 @@ array_merge($title_array, $about_me_array, $projects_array);
                 Bio paragraph 1:
                     <textarea name="intro_text" input type="text" rows="10" cols="40"><?php echo $about_me_array["paragraph_1"] ?></textarea><br>
                 Image:
-                    <input type="file" name="fileToUpload" id="fileToUpload" value="<?php echo $about_me_array["image"] ?>"><br>
+                    <input type="text" name="image" id="fileToUpload" value="<?php echo $about_me_array["image"] ?>"><br>
                 Bio paragraph 2:
                     <textarea name="intro_text" input type="text" rows="10" cols="40"><?php echo $about_me_array["paragraph_2"] ?></textarea><br>
                     <input type="submit" name="Submit All" value="submit all">
@@ -48,7 +48,7 @@ array_merge($title_array, $about_me_array, $projects_array);
                 Project 1 Title:
                     <input name="project_title" input type="text" value="<?php echo $projects_array["title"] ?>"><br>
                 Image:
-                    <input type="file" name="fileToUpload" id="fileToUpload" value="<?php echo $projects_array["image"] ?>"><br>
+                    <input type="text" name="image" id="fileToUpload" value="<?php echo $projects_array["image"] ?>"><br>
                 Project 1 Paragraph:
                     <textarea name="intro_text" input type="text" rows="10" cols="40"><?php echo $projects_array["paragraph"] ?></textarea><br>
                     <input type="submit" name="Submit All" value="submit all"><br>
