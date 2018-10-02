@@ -52,27 +52,6 @@ array_merge($title_array, $about_me_array, $projects_array);
                 Project 1 Paragraph:
                     <textarea name="intro_text" input type="text" rows="10" cols="40"><?php echo $projects_array["paragraph"] ?></textarea><br>
                     <input type="submit" name="Submit All" value="submit all"><br>
-                Project 2 Title:
-                    <input name="project_title" input type="text" value="<?php echo $projects_array["title"] ?>"><br>
-                Image:
-                    <input type="file" name="fileToUpload" id="fileToUpload" value="<?php echo $projects_array["image"] ?>"><br>
-                Project 2 Paragraph:
-                    <textarea name="intro_text" input type="text" rows="10" cols="40" value="<?php echo $projects_array["paragraph_2"] ?>"></textarea><br>
-                    <input type="submit" name="Submit All" value="submit all"><br>
-                Project 3 Title:
-                    <input name="project_title" input type="text" value="<?php echo $projects_array["title"] ?>"><br>
-                Image:
-                    <input type="file" name="fileToUpload" id="fileToUpload" value="<?php echo $projects_array["image"] ?>"><br>
-                Project 3 Paragraph:
-                    <textarea name="intro_text" input type="text" rows="10" cols="40" value="<?php echo $projects_array["paragraph_2"] ?>"></textarea><br>
-                    <input type="submit" name="Submit All" value="submit all"><br>
-                Project 4 Title:
-                    <input name="project_title" input type="text" value="<?php echo $projects_array["title"] ?>"><br>
-                Image:
-                    <input type="file" name="fileToUpload" id="fileToUpload" value="<?php echo $projects_array["image"] ?>"><br>
-                Project 4 Paragraph:
-                    <textarea name="intro_text" input type="text" rows="10" cols="40" value="<?php echo $projects_array["paragraph_2"] ?>"></textarea><br>
-                    <input type="submit" name="Submit All" value="submit all"><br>
         </form>
 </body>
 </html>
