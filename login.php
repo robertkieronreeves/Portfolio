@@ -1,11 +1,24 @@
 <?php
-// start the session
+
 session_start();
-session_destroy();
+const USERLIST = ['username' => 'robertkieronreeves'];
+
+If (isset($_POST['username']) && isset($_POST['rainbowsandunicorns'])) {
+    if (password_verify($_POST['rainbowsandunicorns'], USERLIST[$_POST['username']])) {
+        $_SESSION['logged_in'] = TRUE;
+        header('Location: http://localhost:8000/dashboard.php');
+        exit();
+    } else {
+        echo "incorrect login";
+    }
+}
+
 if ($_SESSION['logged_in']) {
-    header('Location: http://localhost:8000/account.php');
+    header('Location: http://localhost:8000/dashboard.php');
     exit();
 }
+session_destroy();
+
 ?>
 
 <!DOCTYPE html>

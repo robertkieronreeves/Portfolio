@@ -51,7 +51,7 @@ DROP TABLE IF EXISTS `intro`;
 CREATE TABLE `intro` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) DEFAULT NULL,
-  `intro_blurb` text,
+  `intro_text` text,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -62,7 +62,7 @@ CREATE TABLE `intro` (
 
 LOCK TABLES `intro` WRITE;
 /*!40000 ALTER TABLE `intro` DISABLE KEYS */;
-INSERT INTO `intro` VALUES (1,'JUNIOR WEB DEVELOPER','There are lots of interesting things about me on this website. Please take your time and enjoy your stay. If you have any queries about anything then please don\'t hesitate to drop me a line.');
+INSERT INTO `intro` VALUES (1,'WEB DEVELOPER','Welcome to my webpage! Please feel free to stay as long as you like and don\'t hesitate to use my contact details at the bottom of the webpage if you would like to get in touch.');
 /*!40000 ALTER TABLE `intro` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -74,8 +74,8 @@ DROP TABLE IF EXISTS `projects`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `projects` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) DEFAULT NULL,
+  `id` int(11) NOT NULL,
+  `title` text,
   `image` text,
   `paragraph` text,
   PRIMARY KEY (`id`)
@@ -88,6 +88,7 @@ CREATE TABLE `projects` (
 
 LOCK TABLES `projects` WRITE;
 /*!40000 ALTER TABLE `projects` DISABLE KEYS */;
+INSERT INTO `projects` VALUES (1,'Please see below examples of my projects completed so far:','https://d1vki863cvir6c.cloudfront.net/uploads/topic/background_image_thumbnail/619/logo-vertical.jpg','I was tasked with drawing the Mayden Academy logo from scratch using only HTML and CSS. This is to be completed entirely in our spare time.');
 /*!40000 ALTER TABLE `projects` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -100,4 +101,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-01 13:07:47
+-- Dump completed on 2018-10-02 13:55:25
