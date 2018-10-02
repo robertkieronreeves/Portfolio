@@ -1,9 +1,13 @@
 <?php
 
 session_start();
-const USERLIST = ['username' => 'robertkieronreeves'];
+//const USERLIST = ['username' => 'robertkieronreeves'];
 
-If (isset($_POST['username']) && isset($_POST['rainbowsandunicorns'])) {
+If (isset($_POST['Submit']) {
+    $logins = array('robertkieronreeves')
+
+
+} && isset($_POST['rainbowsandunicorns'])) {
     if (password_verify($_POST['rainbowsandunicorns'], USERLIST[$_POST['username']])) {
         $_SESSION['logged_in'] = TRUE;
         header('Location: http://localhost:8000/dashboard.php');
@@ -33,11 +37,12 @@ session_destroy();
     <title>Login Page</title>
 </head>
 <body>
-<form method='POST' action="login.php">
-    Username:<br>
-    <input name="username" input type="text"><br>
-    Password:<br>
-    <input name="password" input type="password"><br>
-    <input type="Submit" value="Submit">
+    <form method="post" action="login.php" name="login form">
+        Username:<br>
+        <input name="username" input type="text"><br>
+        Password:<br>
+        <input name="password" input type="password"><br>
+        <input type="Submit" value="Submit">
+    </form>
 </body>
 </html>
