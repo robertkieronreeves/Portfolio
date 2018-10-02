@@ -1,3 +1,17 @@
+<?php
+$db = new PDO('mysql:dbname=portfolio;host=127.0.0.1', 'root');
+$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+$stmt = $db->query("SELECT `title` ,`intro_text` FROM `intro`");
+$title_array = $stmt->fetch();
+$stmt = $db->query("SELECT `paragraph_1`, `image`, `paragraph_2` FROM `about_me`");
+$about_me_array = $stmt->fetch();
+$stmt = $db->query("SELECT `title`, `image`, `paragraph` FROM `projects`");
+$projects_array = $stmt->fetch();
+
+$data = array_merge($title_array, $about_me_array, $projects_array);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,11 +41,11 @@
                 <h1>ROB REEVES</h1>
                     <div class="sub-heading-wrapper">
                         <div class="sub-heading">
-                            <h3>JUNIOR WEB DEVELOPER</h3>
+                            <h3><?php echo $title_array["title"] ?></h3>
                         </div>
                     </div>
                     <div class="sub-heading-wrapper-bottom">
-                        <p class="sub-heading-blog">There are lots of interesting things about me on this website. Please take your time and enjoy your stay. If you have any queries about anything then please don't hesitate to drop me a line.</p>
+                        <p class="sub-heading-blog"><?php echo $title_array["intro_text"] ?></p>
                     </div>
             </div>
         </div>
@@ -40,20 +54,20 @@
             <div class="top-sub-heading">
                 <h2>ABOUT ME</h2>
             </div>
-            <p class="main-content-text">I am a junior web developer with a passion for design and agile development. I am currently learning HTML, CSS, Javascript, PHP, and MySQL. I am also familiar with Git and other software environments. I am a certified scrum master and will be applying for my PHP Zend certification after I have graduated from Mayden Academy.</p>
+            <p class="main-content-text"><?php echo $about_me_array["paragraph_1"] ?></p>
             <div class="article">
-                <img src="img/a-drop-of-water-osa-water-leaf-158725.jpeg" class="image" alt="sea shore">
-                <p class="main-content-text">In addition to my web-development skills I have an honours degree in marketing and have over ten year's experience in hospitality and customer service. I also possess a level 5 leadership qualification from the Institute of Business Leadership. As far as hobbies and personal time go, I spent a lot of time working on my car, keeping fit, learning German and playing Rugby for the Bath Saracens. I am also currently working part-time at the King William pub in Bath.</p>
+                <img src="<?php echo $about_me_array["image"] ?>" class="image" alt="sea shore">
+                <p class="main-content-text"><?php echo $about_me_array["paragraph_2"] ?></p>
             </div>
         </div>
         <div class="main-content-wrapper">
             <div class="top-sub-heading" id="C4">
                 <h2>PROJECTS</h2>
             </div>
-            <p class="main-content-text">Please see below examples of my projects completed so far:</p>
+            <p class="main-content-text"><?php echo $projects_array["title"] ?></p>
             <div class="article">
-                <img src="https://d1vki863cvir6c.cloudfront.net/uploads/topic/background_image_thumbnail/619/logo-vertical.jpg" class="image" alt="Mayden Academy logo">
-                <p class="main-content-text">I was tasked with drawing the Mayden Academy logo from scratch using only HTML and CSS. This is to be completed entirely in our spare time.</p>
+                <img src="<?php echo $projects_array["image"] ?>" class="image" alt="Mayden Academy logo">
+                <p class="main-content-text"><?php echo $projects_array["paragraph"] ?></p>
             </div>
         </div>
     </section>

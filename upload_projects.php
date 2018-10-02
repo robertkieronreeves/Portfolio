@@ -8,9 +8,9 @@ $stmt = $db->prepare (
                  WHERE id = 1;"
 );
 
-$stmt->bindParam('title', $_POST["title"]);
+$stmt->bindParam('title', $_POST["project_title"]);
 $stmt->bindParam(':image', $_POST["image"]);
-$stmt->bindParam(':paragraph', $_POST["paragraph"]);
+$stmt->bindParam(':paragraph', $_POST["intro_text"]);
 
 $stmt->execute();
 ?>
