@@ -1,7 +1,8 @@
 <?php
 
-$db = new PDO('mysql:dbname=portfolio;host=127.0.0.1', 'root');
-$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+require 'functions.php';
+
+$db = displayPDO();
 
 $stmt = $db->prepare (
               "UPDATE  `intro`
@@ -19,11 +20,6 @@ $stmt->execute();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Fanwood+Text" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="css/portfolio.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
 </head>
 <body>

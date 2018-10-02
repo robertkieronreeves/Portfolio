@@ -1,6 +1,8 @@
 <?php
-$db = new PDO('mysql:dbname=portfolio;host=127.0.0.1', 'root');
-$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+require 'functions.php';
+
+$db = displayPDO();
 
 $stmt = $db->query("SELECT `title` ,`intro_text` FROM `intro`");
 $title_array = $stmt->fetch();
