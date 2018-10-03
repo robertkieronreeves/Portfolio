@@ -4,17 +4,21 @@ require 'functions.php';
 
 $db = createDB();
 
-if (empty($_POST['project_title']) || empty($_POST['image']) || empty($_POST['intro_text'])) {
-    echo 'Please fill out all fields';
+$stmt = $db->query("SELECT `title`, `image`, `paragraph` FROM `projects`");
+$projects_array = $stmt->fetch();
+
+if (empty($_GET['id'])) {
+    echo 'Please select a project from the existing projects page';
 } else {
 
     $stmt = $db->prepare(
-        "UPDATE `projects`
-                 SET `title` = :title, `image` = :image, `paragraph` = :paragraph
-                 WHERE id = 1;"
+        "SELECT `title`, `image`, `paragraph`
+                FROM projects
+                WHERE id = :id;"
     );
 
-    $stmt->bindParam('title', $_POST["project_title"]);
+    $stmt->bindParam(':id',    $_GET["id"]);
+    $stmt->bindParam(':title', $_POST["project_title"]);
     $stmt->bindParam(':image', $_POST["image"]);
     $stmt->bindParam(':paragraph', $_POST["intro_text"]);
 
@@ -30,6 +34,13 @@ if (empty($_POST['project_title']) || empty($_POST['image']) || empty($_POST['in
     <title>Dashboard</title>
 </head>
 <body>
-Thanks!<br>
-<a class="nav-text" href="dashboard.php">Return</a>
+<form action="upload_existing.php" method="post">
+    <h3>Edit existing project</h3>
+    <input type="hidden" name="id" value="<?php $_GET["id"]?>">
+    <label>Project Title:</label><br><input name="project_title" type="text" value="<?php echo $projects_array["title"] ?>"><br><br>
+    <label>Image:</label>          <input type="text" name="image" id="fileToUpload" value="<?php echo $projects_array["image"] ?>"><br><br>
+    <label>Project Paragraph:</label><br><textarea name="intro_text" type="text" rows="10" cols="40">"<?php echo $projects_array["paragraph"] ?>"</textarea><br>
+    <input type="submit" name="Submit All" value="submit all"><br>
+</form><br>
+<a class="nav-text" href="dashboard.php">Dashboard</a>
 </body>

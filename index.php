@@ -67,7 +67,7 @@ $db = createDB();
             </div>
             <p class="main-content-text"><?php echo $projects_array["title"] ?></p>
             <div class="article">
-                <img src="<?php echo $projects_array["image"] ?>" class="image" alt="Mayden Academy logo">
+                <img src="<?php echo $projects_array["image"] ?>" class="image" alt="project logo">
                 <p class="main-content-text"><?php echo $projects_array["paragraph"] ?></p>
             </div>
         </div>

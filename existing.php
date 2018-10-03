@@ -16,15 +16,15 @@ $projects_array = $stmt->fetchAll();
     <title>Edit existing project</title>
 </head>
 <body>
-            <form action="upload_projects.php" method="post" enctype="multipart/form-data">
+            <form action="upload_projects.php" method="GET">
                 Select Project:
-                <select name=“id”>
+                <select name="id">
                     <?php
                     foreach ($projects_array as $project) { ?>
-                        <option value=“<?php echo $project['id']?>“><?php echo $project['title']; ?></option>
+                        <option value="<?php echo $project['id']?>"><?php echo $project['title']; ?></option>
                     <?php } ?>
                 </select>
-                <input type="submit" name="submit" value="Submit">
+                <input type="submit" value="Submit">
             </form>
 </body>
 </html>
