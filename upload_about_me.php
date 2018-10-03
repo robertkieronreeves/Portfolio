@@ -2,7 +2,7 @@
 
 require 'functions.php';
 
-$db = displayPDO();
+$db = createDB();
 
 $stmt = $db->prepare (
                 "UPDATE `about_me`

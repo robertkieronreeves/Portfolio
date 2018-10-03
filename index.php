@@ -2,7 +2,7 @@
 
 require 'functions.php';
 
-$db = displayPDO();
+$db = createDB();
 
     $stmt = $db->query("SELECT `title` ,`intro_text` FROM `intro`");
     $title_array = $stmt->fetch();
@@ -10,8 +10,6 @@ $db = displayPDO();
     $about_me_array = $stmt->fetch();
     $stmt = $db->query("SELECT `title`, `image`, `paragraph` FROM `projects`");
     $projects_array = $stmt->fetch();
-
-$data = array_merge($title_array, $about_me_array, $projects_array);
 
 ?>
 
