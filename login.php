@@ -1,29 +1,46 @@
 <?php
 
 session_start();
-//const USERLIST = ['username' => 'robertkieronreeves'];
 
-If (isset($_POST['Submit']) {
-    $logins = array('robertkieronreeves')
+$username = 'robertreeves';
+$password = 'rainbowsandunicorns';
 
+$random1 = 'secret_key1';
+$random2 = 'secret_key2';
 
-} && isset($_POST['rainbowsandunicorns'])) {
-    if (password_verify($_POST['rainbowsandunicorns'], USERLIST[$_POST['username']])) {
-        $_SESSION['logged_in'] = TRUE;
+$hash = md5($random1.$password.$random2);
+
+if(isset($_GET['logout']))
+{
+    unset($_SESSION['login']);
+}
+
+if (isset($_SESSION['login']) && $_SESSION['login'] == $hash) {
+
+    echo 'You have successfully logged in!';
+
+} else if (isset($_POST['submit'])) {
+
+    if ($_POST['username'] == $username && $_POST['password'] == $password){
+
+        $_SESSION["login"] = $hash;
         header('Location: http://localhost:8000/dashboard.php');
-        exit();
+
     } else {
-        echo "incorrect login";
+
+        display_login_form();
+        echo 'Username or password is invalid';
+
     }
 }
 
-if ($_SESSION['logged_in']) {
-    header('Location: http://localhost:8000/dashboard.php');
-    exit();
-}
-session_destroy();
+else {
 
-?>
+    display_login_form();
+
+}
+
+function display_login_form() { ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,12 +49,13 @@ session_destroy();
     <title>Login Page</title>
 </head>
 <body>
-    <form method="post" action="login.php" name="login form">
-        Username:<br>
-        <input name="username" input type="text"><br>
-        Password:<br>
-        <input name="password" input type="password"><br>
-        <input type="Submit" value="Submit">
-    </form>
+<form method='POST' action="dashboard.php" name="login_form">
+    Username:<br><input name="username" type="text"><br>
+    Password:<br><input name="password" type="password"><br>
+    <input type="Submit" value="Submit">
+</form>
 </body>
-</html>
+
+<?php }
+
+?>
