@@ -4,16 +4,22 @@ require 'functions.php';
 
 $db = createDB();
 
-$stmt = $db->prepare (
-                "UPDATE `intro`
+if (empty($_POST['title_text']) || empty($_POST['intro_text'])) {
+    echo 'Please fill out all fields';
+} else {
+
+    $stmt = $db->prepare(
+        "UPDATE `intro`
                  SET `title` = :title_text, `intro_text` = :intro_text
                  WHERE id = 1;"
-);
+    );
 
-$stmt->bindParam(':title_text', $_POST["title_text"]);
-$stmt->bindParam(':intro_text', $_POST["intro_text"]);
+    $stmt->bindParam(':title_text', $_POST["title_text"]);
+    $stmt->bindParam(':intro_text', $_POST["intro_text"]);
 
-$stmt->execute();
+    $stmt->execute();
+
+}
 ?>
 
 <!DOCTYPE html>
