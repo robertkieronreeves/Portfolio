@@ -14,16 +14,13 @@ if (empty($_GET['id'])) {
     $stmt = $db->prepare(
         "SELECT `title`, `image`, `paragraph`
                 FROM projects
-                WHERE id = :id;"
+                WHERE `id` = :id;"
     );
 
     $stmt->bindParam(':id',    $_GET["id"]);
-    $stmt->bindParam(':title', $_POST["project_title"]);
-    $stmt->bindParam(':image', $_POST["image"]);
-    $stmt->bindParam(':paragraph', $_POST["intro_text"]);
 
     $stmt->execute();
-
+    $projects_array = $stmt->fetch();
 }
 ?>
 

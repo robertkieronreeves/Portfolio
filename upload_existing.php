@@ -5,7 +5,7 @@ require 'functions.php';
 $db = createDB();
 
 if (empty($_POST['project_title']) || empty($_POST['image']) || empty($_POST['intro_text'])) {
-    echo 'Please fill out all fields';
+   ;
 } else {
 
     $stmt = $db->prepare(
