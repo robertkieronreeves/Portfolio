@@ -4,12 +4,12 @@ require 'functions.php';
 
 $db = createDB();
 
-    $stmt = $db->query("SELECT `title` ,`intro_text` FROM `intro`");
-    $title_array = $stmt->fetch();
-    $stmt = $db->query("SELECT `paragraph_1`, `image`, `paragraph_2` FROM `about_me`");
-    $about_me_array = $stmt->fetch();
-    $stmt = $db->query("SELECT `title`, `image`, `paragraph` FROM `projects`");
-    $projects_array = $stmt->fetch();
+$stmt = $db->query("SELECT `title` ,`intro_text` FROM `intro`");
+$title_array = $stmt->fetch();
+$stmt = $db->query("SELECT `paragraph_1`, `image`, `paragraph_2` FROM `about_me`");
+$about_me_array = $stmt->fetch();
+$stmt = $db->query("SELECT `title`, `image`, `paragraph` FROM `projects`");
+$projects_array = $stmt->fetchAll();
 
 ?>
 
@@ -65,11 +65,15 @@ $db = createDB();
             <div class="top-sub-heading" id="C4">
                 <h2>PROJECTS</h2>
             </div>
-            <p class="main-content-text"><?php echo $projects_array["title"] ?></p>
-            <div class="article">
-                <img src="<?php echo $projects_array["image"] ?>" class="image" alt="project logo">
-                <p class="main-content-text"><?php echo $projects_array["paragraph"] ?></p>
-            </div>
+            <?php
+            foreach ($projects_array as $project) {
+                echo '<p class="main-content-text">'. $project['title'] .'</p>';
+                echo '<div class="article">';
+                echo '<img src="'.$project['image'].'" class="image" alt="project logo">';
+                echo '<p class="main-content-text">'.$project['paragraph'].'</p>';
+                echo '</div>';
+            }
+            ?>
         </div>
     </section>
     <section class="blog-wrapper">

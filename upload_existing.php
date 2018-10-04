@@ -1,11 +1,12 @@
 <?php
-
+//var_dump($_POST);
+echo 'hello'. $_POST['id'];
 require 'functions.php';
 
 $db = createDB();
 
 if (empty($_POST['project_title']) || empty($_POST['image']) || empty($_POST['intro_text'])) {
-   ;
+
 } else {
 
     $stmt = $db->prepare(
@@ -17,6 +18,7 @@ if (empty($_POST['project_title']) || empty($_POST['image']) || empty($_POST['in
     $stmt->bindParam(':title', $_POST["project_title"]);
     $stmt->bindParam(':image', $_POST["image"]);
     $stmt->bindParam(':paragraph', $_POST["intro_text"]);
+    $stmt->bindParam(':id', $_POST["id"]);
 
     $stmt->execute();
 

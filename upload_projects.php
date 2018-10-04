@@ -1,5 +1,5 @@
 <?php
-
+echo $_GET['id'];
 require 'functions.php';
 
 $db = createDB();
@@ -33,7 +33,7 @@ if (empty($_GET['id'])) {
 <body>
 <form action="upload_existing.php" method="post">
     <h3>Edit existing project</h3>
-    <input type="hidden" name="id" value="<?php $_GET["id"]?>">
+    <input type="hidden" name="id" value="<?php echo $_GET["id"]?>">
     <label>Project Title:</label><br><input name="project_title" type="text" value="<?php echo $projects_array["title"] ?>"><br><br>
     <label>Image:</label>          <input type="text" name="image" id="fileToUpload" value="<?php echo $projects_array["image"] ?>"><br><br>
     <label>Project Paragraph:</label><br><textarea name="intro_text" type="text" rows="10" cols="40">"<?php echo $projects_array["paragraph"] ?>"</textarea><br>

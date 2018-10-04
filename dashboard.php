@@ -4,12 +4,12 @@ require 'functions.php';
 
 $db = createDB();
 
-    $stmt = $db->query("SELECT `title` ,`intro_text` FROM `intro`");
-    $title_array = $stmt->fetch();
-    $stmt = $db->query("SELECT `paragraph_1`, `image`, `paragraph_2` FROM `about_me`");
-    $about_me_array = $stmt->fetch();
-    $stmt = $db->query("SELECT `title`, `image`, `paragraph` FROM `projects`");
-    $projects_array = $stmt->fetch();
+$stmt = $db->query("SELECT `title` ,`intro_text` FROM `intro`");
+$title_array = $stmt->fetch();
+$stmt = $db->query("SELECT `paragraph_1`, `image`, `paragraph_2` FROM `about_me`");
+$about_me_array = $stmt->fetch();
+$stmt = $db->query("SELECT `title`, `image`, `paragraph` FROM `projects`");
+$projects_array = $stmt->fetch();
 
 ?>
 
