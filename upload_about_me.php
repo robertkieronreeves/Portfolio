@@ -18,7 +18,6 @@ if (empty($_POST['project_title']) || empty($_POST['image']) || empty($_POST['in
     $stmt->bindParam(':image', $_POST["image"]);
     $stmt->bindParam(':paragraph_2', $_POST["intro_text"]);
 
-
     $stmt->execute();
 
 }

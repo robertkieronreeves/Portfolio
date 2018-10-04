@@ -18,22 +18,16 @@ $projects_array = $stmt->fetchAll();
     <body>
         <form action="upload_projects.php" method="GET">
             Select Project:
-            <select name="id">
                 <?php
-                foreach ($projects_array as $project) { ?>
-                    <option value="<?php echo $project['id']?>"><?php echo $project['title']; ?></option>
-                <?php } ?>
-            </select>
+                echo callRow($projects_array);
+                ?>
             <input type="submit" value="Submit">
         </form>
         <form action="delete_projects.php" method="GET">
             Delete Project:
-            <select name="id">
                 <?php
-                foreach ($projects_array as $project) { ?>
-                    <option value="<?php echo $project['id']?>"><?php echo $project['title']; ?></option>
-                <?php } ?>
-            </select>
+                echo callRow($projects_array);
+                ?>
             <input type="submit" name="Delete project" value="Delete project"><br>
         </form><br>
         <a type="button" href="dashboard.php">Back to dashboard</a>

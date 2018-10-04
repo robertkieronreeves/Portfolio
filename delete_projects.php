@@ -9,9 +9,8 @@ $stmt = $db->prepare(
       WHERE `id` = :id;"
 );
 $stmt->bindParam(':id',    $_GET["id"]);
-$stmt->execute();
 
-echo 'Project successfully deleted';
+$stmt->execute();
 
 ?>
 
@@ -20,6 +19,7 @@ echo 'Project successfully deleted';
 <head>
 </head>
 <body>
+Project successfully deleted!
 <a class="nav-text" href="existing.php"><br>Back to projects</a>
 </body>
 </html>
