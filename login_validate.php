@@ -10,7 +10,7 @@ $password = $_POST['password'];
 
 define ('HASH', '$2y$10$L5Gi372nOjHhwvFB1Ew7Eepx1XCyQsHx7tPApYjOG3XdR4AjPc4Eq');
 
-if ($username == 'robertreeves' && password_verify($password, HASH)) {
+if ($username == 'robreeves' && password_verify($password, HASH)) {
     $_SESSION['login'] = true;
     header('Location: dashboard.php');
 } else {
