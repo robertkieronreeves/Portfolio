@@ -1,13 +1,3 @@
-<?php
-
-session_start();
-
-//echo password_hash('cheeseburger', PASSWORD_DEFAULT);
-
-$username = 'robreeves';
-$password = 'cheeseburger';
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
