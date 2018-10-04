@@ -1,9 +1,5 @@
 <?php
 
-//if (empty($_POST['username']) || empty($_POST['password'])) {
-//    header('Location: login.php?error=1');
-//    exit();
-//}
 session_start();
 
 $username = $_POST['username'];
