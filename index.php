@@ -1,3 +1,25 @@
+<?php
+
+//session_start();
+//include_once ('../functions/login_functions.php');
+//
+//if (!checkSessionLogin($_SESSION)) {
+//    header('Location: ../login.php?error=1');
+//}
+
+require 'functions.php';
+
+$db = createDB();
+
+$stmt = $db->query("SELECT `title` ,`intro_text` FROM `intro`");
+$title_array = $stmt->fetch();
+$stmt = $db->query("SELECT `paragraph_1`, `image`, `paragraph_2` FROM `about_me`");
+$about_me_array = $stmt->fetch();
+$stmt = $db->query("SELECT `title`, `image`, `paragraph` FROM `projects`");
+$projects_array = $stmt->fetchAll();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +36,9 @@
     <header class="main-nav">
         <div class="nav-button-left">
             <a class="nav-text" href="#C1">ABOUT ME</a>
+            <a class="nav-text" href="#C4">PROJECTS</a>
             <a class="nav-text" href="#C3">CONTACT</a>
+            <a class="nav-text" href="login.php">ADMIN LOGIN</a>
         </div>
         <div class="nav-button-right">
             <a class="nav-text" href="#C2">THREE PEDALS ONLY</a>
@@ -25,11 +49,11 @@
                 <h1>ROB REEVES</h1>
                     <div class="sub-heading-wrapper">
                         <div class="sub-heading">
-                            <h3>JUNIOR WEB DEVELOPER</h3>
+                            <h3><?php echo $title_array["title"] ?></h3>
                         </div>
                     </div>
                     <div class="sub-heading-wrapper-bottom">
-                        <p class="sub-heading-blog">There are lots of interesting things about me on this website. Please take your time and enjoy your stay. If you have any queries about anything then please don't hesitate to drop me a line.</p>
+                        <p class="sub-heading-blog"><?php echo $title_array["intro_text"] ?></p>
                     </div>
             </div>
         </div>
@@ -38,11 +62,25 @@
             <div class="top-sub-heading">
                 <h2>ABOUT ME</h2>
             </div>
-            <p class="main-content-text">I am a junior web developer with a passion for design and agile development. I am currently learning HTML, CSS, Javascript, PHP, and MySQL. I am also familiar with Git and other software environments. I am a certified scrum master and will be applying for my PHP Zend certification after I have graduated from Mayden Academy.</p>
+            <p class="main-content-text"><?php echo $about_me_array["paragraph_1"] ?></p>
             <div class="article">
-                <img src="img/a-drop-of-water-osa-water-leaf-158725.jpeg" class="image" alt="sea shore">
-                <p class="main-content-text">In addition to my web-development skills I have an honours degree in marketing and have over ten year's experience in hospitality and customer service. I also possess a level 5 leadership qualification from the Institute of Business Leadership. As far as hobbies and personal time go, I spent a lot of time working on my car, keeping fit, learning German and playing Rugby for the Bath Saracens. I am also currently working part-time at the King William pub in Bath.</p>
+                <img src="<?php echo $about_me_array["image"] ?>" class="image" alt="sea shore">
+                <p class="main-content-text"><?php echo $about_me_array["paragraph_2"] ?></p>
             </div>
+        </div>
+        <div class="main-content-wrapper">
+            <div class="top-sub-heading" id="C4">
+                <h2>PROJECTS</h2>
+            </div>
+            <?php
+            foreach ($projects_array as $project) {
+                echo '<p class="main-content-text">'. $project['title'] .'</p>';
+                echo '<div class="article">';
+                echo '<img src="'.$project['image'].'" class="image" alt="project logo">';
+                echo '<p class="main-content-text">'.$project['paragraph'].'</p>';
+                echo '</div>';
+            }
+            ?>
         </div>
     </section>
     <section class="blog-wrapper">
@@ -66,7 +104,7 @@
     </section>
     <footer id="C3">
         <div class="footer-text">
-            <a class="nav-text">CONTACT DETAILS:<img class="contact-image" src="img/if_5303_-_Gmail_1218788.png" alt="email">ROBERTKIERONREEVES@GMAIL.COM<img class="contact-image" src=":img/if_phone_281830.png" alt="phone">+447762060755</a>
+            <a class="nav-text">CONTACT DETAILS:<img class="contact-image" src="img/if_5303_-_Gmail_1218788.png" alt="email">ROBERTKIERONREEVES@GMAIL.COM<img class="contact-image" src="img/if_phone_281830.png" alt="phone">+447762060755</a>
         </div>
         <div class="social-media-container">
             <a href="https://www.facebook.com" target="_blank">
