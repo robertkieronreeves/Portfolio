@@ -2,10 +2,10 @@
 
 session_start();
 
-//echo password_hash('rainbowsandunicorns', PASSWORD_DEFAULT);
+//echo password_hash('cheeseburger', PASSWORD_DEFAULT);
 
 $username = 'robreeves';
-$password = 'rainbowsandunicorns';
+$password = 'cheeseburger';
 
 ?>
 
