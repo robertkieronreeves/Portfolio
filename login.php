@@ -20,7 +20,8 @@ $password = 'cheeseburger';
     Username:<br><input name="username" type="text" required><br>
     Password:<br><input name="password" type="password" required><br>
     <input type="Submit" value="Submit">
-</form>
+</form><br>
+<a class="nav-text" href="index.php">Home Page</a>
 </body>
 </html>
 
