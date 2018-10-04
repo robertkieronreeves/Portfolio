@@ -1,5 +1,5 @@
 <?php
-echo $_GET['id'];
+
 require 'functions.php';
 
 $db = createDB();

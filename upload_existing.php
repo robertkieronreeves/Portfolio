@@ -1,6 +1,4 @@
 <?php
-//var_dump($_POST);
-echo 'hello'. $_POST['id'];
 require 'functions.php';
 
 $db = createDB();
@@ -12,12 +10,12 @@ if (empty($_POST['project_title']) || empty($_POST['image']) || empty($_POST['in
     $stmt = $db->prepare(
         "UPDATE `projects`
                  SET `title` = :project_title, `image` = :image, `paragraph` = :intro_text
-                 WHERE id = :id;"
+                 WHERE `id` = :id;"
     );
 
-    $stmt->bindParam(':title', $_POST["project_title"]);
+    $stmt->bindParam(':project_title', $_POST["project_title"]);
     $stmt->bindParam(':image', $_POST["image"]);
-    $stmt->bindParam(':paragraph', $_POST["intro_text"]);
+    $stmt->bindParam(':intro_text', $_POST["intro_text"]);
     $stmt->bindParam(':id', $_POST["id"]);
 
     $stmt->execute();
@@ -33,5 +31,5 @@ if (empty($_POST['project_title']) || empty($_POST['image']) || empty($_POST['in
 </head>
 <body>
 Thanks!<br>
-<a class="nav-text" href="newProject.php">Return</a>
+<a class="nav-text" href="upload_projects.php">Return</a>
 </body>
