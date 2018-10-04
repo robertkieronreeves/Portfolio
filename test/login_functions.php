@@ -1,6 +1,6 @@
 <?php
 
-require('../login_functions.php');
+require('../session.php');
 
 use PHPUnit\Framework\Testcase;
 
