@@ -1,3 +1,9 @@
+<?php
+
+if (($_GET['error']) == 1) {
+    echo 'Please enter the correct login details';
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
