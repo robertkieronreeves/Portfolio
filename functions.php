@@ -1,6 +1,7 @@
 <?php
 
-/* creates a database connection.
+/*
+ *  creates a database connection.
  */
 
 function createDB() {
@@ -9,7 +10,8 @@ function createDB() {
     return $db;
 }
 
-/* creates a html select dropdown.
+/*
+ * creates a html select dropdown.
  *
  * @param $projects_array array projects from the database
  *
