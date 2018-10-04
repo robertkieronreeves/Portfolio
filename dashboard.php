@@ -1,5 +1,12 @@
 <?php
 
+//session_start();
+////include_once ('../functions/login_functions.php');
+////
+////if (!checkSessionLogin($_SESSION)) {
+////    header('Location: ../login.php?error=1');
+////}
+
 require 'functions.php';
 
 $db = createDB();
