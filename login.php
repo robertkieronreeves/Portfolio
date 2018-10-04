@@ -1,5 +1,7 @@
 <?php
 
+echo password_hash('robertreeves', PASSWORD_BCRYPT);
+
 session_start();
 
 $username = 'robertreeves';
@@ -50,8 +52,8 @@ function display_login_form() { ?>
 </head>
 <body>
 <form method='POST' action="dashboard.php" name="login_form">
-    Username:<br><input name="username" type="text"><br>
-    Password:<br><input name="password" type="password"><br>
+    Username:<br><input name="username" type="text" required><br>
+    Password:<br><input name="password" type="password" required><br>
     <input type="Submit" value="Submit">
 </form>
 </body>
