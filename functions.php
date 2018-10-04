@@ -23,15 +23,18 @@ function createDB() {
  * @param string $output returns html text which cleans up the appearance of the code in existing.php
  */
 
-    function callRow($projects_array) {
+    function callRow(array $projects_array) {
         $output = '<select name="id">';
 
         foreach ($projects_array as $project) {
-            $output .= '<option value="' . $project['id'] . '">' . $project['title'] . '</option>';
+            if (!empty($project['id']) && !empty($project['title'])) {
+                $output .= '<option value="' . $project['id'] . '">' . $project['title'] . '</option>';
+            } else {
+                return FALSE;
+            }
         }
         $output .='</select>';
     return $output;
-
 }
 
 ?>
