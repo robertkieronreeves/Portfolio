@@ -1,13 +1,6 @@
 <?php
 
-/* the function createDB() allows the program to call the database connection
- * from any of the relevant files.
- *
- * @param stream $db establishes a connection to the database
- * new PDO takes three parameters which are strings: the DSN, the host
- * and the username and password.
- * @param->setAttribute sets an attribute on the database handle.
- * @return outputs the database connection.
+/* creates a database connection.
  */
 
 function createDB() {
@@ -16,11 +9,11 @@ function createDB() {
     return $db;
 }
 
-/* The function callRow reduces duplication in the existing.php file by
- * replacing two batches of duplicate text with a function keeping the code drier.
+/* creates a html select dropdown.
  *
- * @param array $projects_array contains query data that populates the 'id' and 'title' strings
- * @param string $output returns html text which cleans up the appearance of the code in existing.php
+ * @param $projects_array array projects from the database
+ *
+ * @return string the html string for the select dropdown.
  */
 
     function callRow(array $projects_array) {
